@@ -1,27 +1,19 @@
-mkdir Darshan
-cd Darshan
-
-
-git config --global user.name "Name"
-git config --global user.email "Email"
-
+git config --global user.name " "
+git config --global user.email "yourmail@gmail.com"
+git config --list
+mkdir myproject
+cd myproject
 git init
 git status
-
-touch file1.txt
-echo "text" >> file1.txt
-
+touch index.txt
+git status
+git add index.txt
 git add .
-git commit -m "message"
-
+git status
+git commit -m "First commit"
 git log
-
-git remote add origin <repo link>
-git push -u origin main
-
-git clone <repo link>
-
-git branch
-git branch -M main
-
-git reset --soft HEAD~1
+git remote add origin url
+git branch -M master
+git push -u origin master
+git clone https://github.com/username/myproject.git
+git reset --hard
