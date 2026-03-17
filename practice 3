@@ -1,0 +1,36 @@
+JENKINS:
+
+
+sudo apt install openjdk-21-jdk -y
+wget https://get.jenkins.io/war-stable/latest/jenkins.war
+java -jar jenkins.war
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone') {
+            steps {
+                git url: 'https://github.com/USERNAME/jenkins-simple-demo.git', branch: 'main'
+            }
+        }
+
+        stage('Run Script') {
+            steps {
+                sh 'chmod +x script.sh'
+                sh './script.sh'
+            }
+        }
+
+    }
+}
+
+
+
+NGROK:
+
+sudo apt update
+sudo apt install snapd -y
+sudo snap install ngrok
+ngrok http 8080
