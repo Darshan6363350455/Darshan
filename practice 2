@@ -1,0 +1,19 @@
+mkdir lab2
+cd lab2
+echo"version 1">file.txt
+git add .
+git commit -m " initial commit"
+git checkout -b feature
+echo" feature version ">file1.txt
+git add .
+git commit -m " chnage in feature"
+git checkout master
+echo" main version ">file1.txt
+git add .
+git commit -m " chnage in main"
+git merge feature
+cat file1.txt
+echo" helll from main and feature branch">file1.txt
+git add .
+git commit -m "resolve merge"
+git log
